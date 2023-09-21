@@ -1,0 +1,24 @@
+<h1>Proprietarios </h1>
+<hr>
+<a href="/admin/proprietarios/add"><button type="button" class="btn btn-outline-success">Adicione novo Prop.</button></a>
+
+{{#each proprietarios}}
+<div class="card mt-4">
+    <div class="card-body">
+        <h4>Nome completo: {{nomeCompleto}}</h4>
+        <h4>CPF/CNPJ: {{cpf}}</h4><br>
+        <h4>Contato: {{contato}}</h4><br>
+        <h4>Endereço: {{endereco}}</h4><br>
+        <small>Data de cadastro: {{date}}</small><br>
+        <a href="/admin/proprietarios/edit/{{_id}}"><button type="button" class="btn btn-outline-secondary mt-4">Editar</button></a>
+
+        {{!-- deletar proprietario --}}
+        <form action="/admin/proprietarios/deletar" method="post">
+            <input type="hidden" name="id" value="{{_id}}">
+            <button type="submit" class="btn btn-danger mt-2">Deletar</button>
+        </form>
+    </div>
+</div>
+{{else}}
+    <h5 class="mt-4">Nenhum proprietario registrado!</h5>
+{{/each}}

@@ -1,0 +1,40 @@
+<div class="jumbotron">
+  <h1 class="display-4 text-center">Bem vindo ao CARRESTA!</h1>
+  <h5 class="text-center">Estacione o seu carro no estacionamento mais seguro do mundo!</h5><br>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/admin/proprietarios/add" role="button">Cadastre novo propritário</a>
+
+    <a class="btn btn-primary btn-lg" href="/admin/veiculos/add" role="button">Cadastre novo veículo</a>
+
+  </p>
+</div>
+
+<hr>
+<h2 class="text-center">Centro do controlo</h2>
+
+{{#each veiculos}}
+<br>
+<table class="table table-dark text-center">
+  <thead>
+    <tr>
+      <th scope="col">Marca</th>
+      <th scope="col">Cor</th>
+      <th scope="col">Placa</th>
+      <th scope="col">Proprietário</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{marca}}</td>
+      <td>{{cor}}</td>
+      <td>{{placa}}</td>
+      <td><a href="/admin/proprietarios"> {{propId.nomeCompleto}}</a></td>
+    </tr>
+    <tr>
+      <td colspan="4">{{date}}</td>
+    </tr>
+  </tbody>
+</table>
+{{else}}
+    <h5>Nenhuma informação cadastrada!</h5>
+{{/each}} 

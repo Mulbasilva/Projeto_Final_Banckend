@@ -1,0 +1,21 @@
+<h1>Veiculos </h1>
+<hr>
+<a href="/admin/veiculos/add"><button type="button" class="btn btn-outline-success">Adicionar nono veiculo</button></a>
+
+{{#each veiculos}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4>Marca: {{marca}}</h4>
+            <h4>Cor: {{cor}}</h4>
+            <h4>Placa: {{placa}}</h4>
+            <h4>Detalhes: {{detalhes}}</h4>
+            <small>Data: {{date}}</small><br><br>
+            
+            <a href="/admin/veiculos/edit/{{_id}}"><button type="button" class="btn btn-outline-secondary">Editar</button></a>
+            <a href="/admin/veiculos/deletar/{{_id}}"><button type="button" class="btn btn-outline-danger">Deletar</button></a>
+        </div>
+    </div>
+    
+{{else}}
+    <p>Nenhum Veiculo registrado!</p>
+{{/each}}

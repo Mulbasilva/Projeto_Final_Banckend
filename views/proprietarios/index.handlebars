@@ -1,0 +1,19 @@
+
+<h4>Todas os proprietarios</h4>
+<br>
+
+{{#each proprietarios}}
+<div class="card">
+    <div class="card-body">
+        <ul>
+            <h4><b>Nome</b>: {{nomeCompleto}}</h4>
+            <h4><b>CPF/CNPJ</b>: {{cpf}}</h4>
+            <h4><b>Contato</b>: {{contato}}</h4>
+            <h4><b>Endereço</b>: {{endereco}}</h4>
+        </ul>
+    </div>
+</div>
+
+{{else}}
+
+{{/each}}

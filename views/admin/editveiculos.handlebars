@@ -1,0 +1,28 @@
+{{#each erros}}
+    <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+{{/each}}
+<div class="card">
+    <div class="card-body">
+        <h4>Editar veiculo</h4>
+        <form action="/admin/veiculo/edit" method="post" />
+        <input type="hidden" value="{{veiculos._id}}" name="id" />
+            <label for="marca">Marca:</label>
+            <input type="text" name="marca" class="form-control" value="{{veiculos.marca}}"/>
+            <label for="cor">Cor:</label>
+            <input type="text" name="cor" class="form-control" value="{{veiculos.cor}}"/>
+            <label for="placa">Placa:</label>
+            <input type="text" name="placa" class="form-control" value="{{veiculos.placa}}"/>
+            <label for="proprietarios">Proprietarios: </label>
+            <select name="proprietario" class="form-select">
+                {{#each proprietarios}}
+                    <option value="{{cpf}}">{{nomeCompleto}}</option>
+                {{else}}
+                    <option value="0">Nenhum proprietario registrado</option>
+                {{/each}}
+            </select>
+            <a href="#"  type="submit"><button class="btn btn-outline-success">Editar veiculo</button></a>
+        </form>
+    </div>
+
+</div>
